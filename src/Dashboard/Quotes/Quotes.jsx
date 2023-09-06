@@ -64,17 +64,26 @@ export class Quotes extends Component {
 
   render() {
     return (
-        <div className="pl-[60vh] pt-40">
-      <div id="quote-box" className="bg-gray-600 box-border h-[50vh] w-[80vh] rounded-[50px] border-double border-border-colour border-8 grid grid-rows-3">
-        <div className="text-lg font-bold"><QuotesText quote={this.state.quote} color={this.state.color} /></div>
-        <QuoteAuthor author={this.state.author} color={this.state.color} />
-        <div className="bg-black rounded-[40px] grid grid-cols-3 items-center pl-[2.25rem] opacity-50 "><div></div>
-        <Buttons
-          handleClick={this.handleClick}
-          color={this.state.color}
-        ></Buttons>
+      <div className="flex items-center text-center bg-blend-lighten justify-center min-h-screen">
+        <div
+          id="quote-box"
+          className="bg-white h-60v w-60v rounded-md grid grid-rows-3 grid-flow-col"
+        >
+          <div className="text-lg font-bold">
+            <QuotesText quote={this.state.quote} color={this.state.color} />
+          </div>
+          <div>
+            <QuoteAuthor
+              author={this.state.author}
+              color={this.state.color}
+              className=""
+            />
+          </div>
+          <div className="rounded-full grid grid-cols-3 items-center opacity-50 ">
+            <div></div>
+            <Buttons handleClick={this.handleClick} color={this.state.color} />
+          </div>
         </div>
-      </div>
       </div>
     );
   }
